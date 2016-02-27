@@ -14,7 +14,7 @@ public class Calculator {
 	public static Class classTypeOf(Object x) {
 		return x.getClass();
 		/* Fuentes: 
-		 * https://msdn.microsoft.com/es-es/library/aa989117(v=vs.80).aspx
+		 * https://msdn.microsoft.com/es-es/library/aa989117(acum=vs.80).aspx
 		 * http://www.mundosica.com/2015/el-metodo-getclass-explicacion-y-uso-practico-construyendo-librerias-en-java-i/
 		 */
 	}	
@@ -24,7 +24,14 @@ public class Calculator {
      * devuelve una lista con los n números de la serie de fibonacci.
      */
 	public static List<Integer> fibonacci(int n) {
-		throw  new NotImplementedException();
+		ArrayList<Integer> acum = new ArrayList<Integer>();
+		for(int i=0; i<n; i++)
+			if(i<2){
+				acum.add(1);
+			}else{
+			acum.add(acum.get(i-1)+acum.get(i-2));
+			}
+		return (acum);
 	}
 
 	/*
